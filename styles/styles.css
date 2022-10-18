@@ -1,4 +1,5 @@
 body {
+    min-width: 300px;
     font-family: 'Raleway', sans-serif;
     color: #213053;
 }
@@ -29,6 +30,10 @@ button:hover {
 }
 
 header {
+    position: sticky;
+    background-color: #fff;
+    top: 0;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -80,17 +85,23 @@ header a {
 
 .about__image {
     width: 500px;
-  }
+}
    
-  .about__sun-image {
+.about__sun-image {
+    position: absolute;
     width: 100px;
     height: 100px;
-  }
+    animation-name: rotation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
 
 .form__group {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    
 } 
 
 .form {
@@ -98,6 +109,7 @@ header a {
     color: #fff;
     padding-top: 115px;
     padding-bottom: 115px; 
+    margin: 0;
 }
 
 .form h1 {
@@ -130,7 +142,6 @@ header a {
     font-size: 18px; 
     color: #213053;
     height: 60px;
-    padding: 0 20px;
     border-radius: 15px;
     border: none; 
 }
@@ -178,4 +189,75 @@ select {
 
 .footer__links a {
     margin-bottom: 15px;
+}
+
+@keyframes rotation {
+    from {transform: rotate(0turn);}
+    to {transform: rotate(1turn);}
+}
+
+@media (max-width: 1023px) {
+    .about {
+        flex-direction: column-reverse;
+    }
+
+    .footer__container {
+        flex-direction: column; 
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    button {
+        font-size: 12px;
+        color: #fff;
+        background-color: #23a030;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        box-shadow: 0 16px 36px rgb(52 213 68 / 22%);
+        padding: 7px;
+    }
+
+    header a {
+        font-size: 12px; 
+        margin-right: 12px;
+    }
+
+    .about h1 {
+        font-size: 32px;
+    }
+
+    .about__image {
+        width: 280px;
+    }
+
+    .about__sun-image {
+        width: 75px;
+        height: 75px;
+    }
+
+    .form__container {
+        width: 300px;
+    }
+
+    .form__container p {
+        font-size: 12px;
+    }
+
+    .form__container h1 {
+        font-size: 32px;
+    } 
+
+    .form input, .form select {
+        font-size: 12px; 
+        height: 40px;
+    }
+
+    .form__submit {
+        font-size: 12px; 
+        height: 40px;  
+    } 
+
+
 }
