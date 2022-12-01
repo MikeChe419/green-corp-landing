@@ -50,6 +50,7 @@ header a {
 }
 
 .about {
+  position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -60,6 +61,12 @@ header a {
     background-size: cover;
 }
 
+.orb-canvas {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  right: 0;
+}
 
 .about h1 {
     font-size: 70px;
